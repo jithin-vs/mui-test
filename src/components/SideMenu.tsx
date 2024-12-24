@@ -2,7 +2,7 @@
 "use client";
 
 import React from 'react';
-import { Box, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Box, Drawer, List, ListItem,ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
@@ -33,8 +33,7 @@ const SideMenu = () => {
       <Box sx={{ overflow: 'auto', mt: 2 }}>
         <List>
           {menuItems.map(({ text, icon, path }) => (
-            <ListItem
-              button={true}
+            <ListItemButton
               key={text}
               component={Link}
               href={path}
@@ -47,7 +46,7 @@ const SideMenu = () => {
             >
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText primary={text} />
-            </ListItem>
+            </ListItemButton>
           ))}
         </List>
       </Box>

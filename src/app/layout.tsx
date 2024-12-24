@@ -7,6 +7,7 @@ import SideMenu from '../components/SideMenu';
 import AppNavbar from '../components/AppNavbar';
 import Header from '../components/Header';
 import AppTheme from '../shared-theme/AppTheme';
+import { CssVarsProvider } from '@mui/joy/styles';
 import './globals.css';
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+      <CssVarsProvider>
         <AppTheme>
           <CssBaseline enableColorScheme />
           <Box sx={{ display: 'flex' }}>
@@ -39,7 +41,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </main>
           </Box>
         </AppTheme>
+      </CssVarsProvider>
       </body>
-    </html>
+      </html>
   );
 }
