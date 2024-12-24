@@ -23,14 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Box sx={{ display: 'flex' }}>
             <SideMenu />
             <AppNavbar />
-            <Box
-              component="main"
-              sx={(theme) => ({
-                flexGrow: 1,
-                backgroundColor: theme.palette.background.default,
-                overflow: 'auto',
-              })}
-            >
+            <main className="flex-grow overflow-auto bg-background">
               <Stack
                 spacing={2}
                 sx={{
@@ -43,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Header />
                 {children}
               </Stack>
-            </Box>
+              </main>
           </Box>
         </AppTheme>
       </body>
